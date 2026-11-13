@@ -6,6 +6,7 @@ import userRoutes from './routes/user.js';
 import { connectRabbitMQ } from "./config/rabbitmq.js";
 dotenv.config();
 const app = express();
+app.use(express.json());
 const port = Number(process.env.PORT) || 8000;
 connectDb();
 connectRabbitMQ();
